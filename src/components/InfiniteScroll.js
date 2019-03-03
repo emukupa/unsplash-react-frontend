@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Image from './Image';
+import './InfiniteScroll.css';
 
 export class componentName extends Component {
   state = {
@@ -45,18 +46,17 @@ export class componentName extends Component {
   };
   render() {
     return (
-      <div className="Images">
-        <InfiniteScroll
-          dataLength={this.state.images.length}
-          next={this.updateState}
-          hasMore={true}
-          loader={<h3>Loading....</h3>}
-        >
-          {this.state.images.map(image => (
-            <Image key={image.id} image={image} />
-          ))}
-        </InfiniteScroll>
-      </div>
+      <InfiniteScroll
+        className="Images"
+        dataLength={this.state.images.length}
+        next={this.updateState}
+        hasMore={true}
+        loader={<h3>Loading....</h3>}
+      >
+        {this.state.images.map(image => (
+          <Image key={image.id} image={image} />
+        ))}
+      </InfiniteScroll>
     );
   }
 }

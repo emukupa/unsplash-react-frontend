@@ -1,9 +1,9 @@
 import React from 'react';
-
+import './Image.css';
 export default ({ image }) => {
   return (
-    <div className="image-wrapper">
-      <img className="single-image" src={image.urls.thumb} alt="" />
+    <div className="Image-wrapper">
+      <img className="single-image" src={image.urls.small} alt="" />
     </div>
   );
 };
